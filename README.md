@@ -17,5 +17,4 @@ This project demonstrates a simple **Blue-Green Deployment** with **Canary testi
 
 ```bash
 git clone https://github.com/yourusername/blue-green-canary-docker.git
-cd blue-green-canary-docker
 docker-compose up --build
