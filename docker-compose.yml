@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  blue:
+    build:
+      context: ./blue
+      dockerfile: ../Dockerfile
+    container_name: blue_app
+
+  green:
+    build:
+      context: ./green
+      dockerfile: ../Dockerfile
+    container_name: green_app
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - blue
+      - green
+
+
+
+
+
+
